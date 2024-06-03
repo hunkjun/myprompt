@@ -1,0 +1,34 @@
+## 口播
+
+### prompt
+
+```
+干了60多年奸商哎，其实我们真的也挺不容易，就这成本5块9的贵妇套盒，寻思卖个19块8，赚个三四倍的利润得了，结果妈的，都说我卖的太便宜，说这种便宜货都没人敢上演，所以我也是勉为其难的含着泪卖你们九百八一盒，就你还真别说啊，自从我这一盒卖980，那大姐一个个买完还都把我夸，你知道大姐为啥夸不就我这五块9成本的套盒？我淘宝旗舰店，我就挂个五千八一盒，然后直播间回馈家人九百八一盒，让大姐抓紧上车，那大姐心想，那抢一盒立马能赚4000多，我就问哪个姐妹能抵挡住这个诱惑，就这破玩意儿，上脸之后，大姐要是觉得那增稠剂和防腐剂的肤感还不错，那指定是得被我圈粉了，要是上脸之后没啥用，那大姐也不会觉得是我这套盒的问题，那5800啊，这么贵的贵妇套盒怎么可能没有用？那大姐肯定会心想，哎，肯定是咱自己皮肤的问题。
+```
+
+将上面的话拆解成如下格式, 同时根据语句content内容和上下文判断下说话的语态style;
+
+[
+  {"name": "333", "content": "嘿，中午吃什么好呢？我觉得打败了这么多怪兽，应该给自己犒劳一下。", "voice": "zh-CN-YunyangNeural", "style": "enthusiastic"},
+  {"name": "777", "content": "那我们吃炸鸡怎么样？听说附近新开了一家很不错的炸鸡店。", "voice": "zh-CN-XiaoxiaoNeural", "style": "enthusiastic"},  {"name": "888", "content": "那我们吃炸鸡怎么样？听说附近新开了一家很不错的炸鸡店。", "voice": "zh-CN-YunjianNeural", "style": "enthusiastic"},
+]
+
+### result
+
+```
+[
+{"name": "333", "content": "干了60多年奸商哎，其实我们真的也挺不容易。", "voice": "zh-CN-YunyangNeural", "style": "resigned"},
+{"name": "333", "content": "就这成本5块9的贵妇套盒，寻思卖个19块8，赚个三四倍的利润得了。", "voice": "zh-CN-YunyangNeural", "style": "cynical"},
+{"name": "333", "content": "结果妈的，都说我卖的太便宜，说这种便宜货都没人敢上演。", "voice": "zh-CN-YunyangNeural", "style": "frustrated"},
+{"name": "333", "content": "所以我也是勉为其难的含着泪卖你们九百八一盒。", "voice": "zh-CN-YunyangNeural", "style": "sarcastic"},
+{"name": "333", "content": "你还真别说，自从我这一盒卖980，那大姐一个个买完还都把我夸。", "voice": "zh-CN-YunyangNeural", "style": "amused"},
+{"name": "333", "content": "你知道大姐为啥夸我这五块9成本的套盒？", "voice": "zh-CN-YunyangNeural", "style": "inquisitive"},
+{"name": "333", "content": "我淘宝旗舰店我就挂个五千八一盒，然后直播间回馈家人九百八一盒。", "voice": "zh-CN-YunyangNeural", "style": "strategic"},
+{"name": "333", "content": "让大姐抓紧上车，那大姐心想，抢一盒立马能赚4000多。", "voice": "zh-CN-YunyangNeural", "style": "persuasive"},
+{"name": "333", "content": "就问哪个姐妹能抵挡住这个诱惑？", "voice": "zh-CN-YunyangNeural", "style": "rhetorical"},
+{"name": "333", "content": "就这破玩意儿，上脸之后，大姐要是觉得那增稠剂和防腐剂的肤感还不错，那指定是得被我圈粉了。", "voice": "zh-CN-YunyangNeural", "style": "amused"},
+{"name": "333", "content": "要是上脸之后没啥用，那大姐也不会觉得是我这套盒的问题。", "voice": "zh-CN-YunyangNeural", "style": "cautious"},
+{"name": "333", "content": "那5800啊，这么贵的贵妇套盒怎么可能没有用？", "voice": "zh-CN-YunyangNeural", "style": "rhetorical"},
+{"name": "333", "content": "那大姐肯定会心想，哎，肯定是咱自己皮肤的问题。", "voice": "zh-CN-YunyangNeural", "style": "amused"}
+]
+```

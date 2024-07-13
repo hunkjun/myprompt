@@ -21,23 +21,44 @@ JSON 各字段的含义表示：
 
 为了确保转化后的语音符合文本的场景和意思，所有字段的值均需要根据上下文和拆分后 content 的内容来定义。
 
+文字内容为两个人互相说一些诗词、谚语、对话, 声音为: YunzeNeural 和 XiaoxiaoNeural, 一个说逗号前面的一句，一个说逗号后面的一句
+
+YunzeNeural 语音语气比较正式，主要说对话的上句，XiaoxiaoNeural 的语音语气比较搞怪、搞笑，主要说下句，请恰当的加一些语气词或者上下文衔接词(比如: 嗯、啊、额之类的)。
+
+style 不要使用"serious",
+
+zh-CN-YunzeNeural 没有笑声，"laughter_url": None 
+
+zh-CN-XiaoxiaoNeural 的笑声laughter_url请从如下的链接中，随机抽选;
+
+- https://hunk-blog.oss-cn-hongkong.aliyuncs.com/xiaosheng.wav
+- https://hunk-blog.oss-cn-hongkong.aliyuncs.com/zhuanchang/mp3/NICE.mp3
+- https://hunk-blog.oss-cn-hongkong.aliyuncs.com/zhuanchang/mp3/%E5%93%A6%E4%B9%B0%E5%98%8E.mp3
+- https://hunk-blog.oss-cn-hongkong.aliyuncs.com/zhuanchang/mp3/%E5%9C%9F%E6%8B%A8%E9%BC%A0%E5%95%8A3.mp3
+- https://hunk-blog.oss-cn-hongkong.aliyuncs.com/zhuanchang/mp3/%E5%B0%8F%E5%AD%A9%E5%93%88%E5%93%88%E5%93%88.mp3
+- https://hunk-blog.oss-cn-hongkong.aliyuncs.com/zhuanchang/mp3/%E9%BB%91%E4%BA%BA%E9%97%AE%E5%8F%B7%E8%84%B8.mp3
+
 ```json
 [
-  {
-    "content": "今天<break />在网上看到这样的一段话,",
-    "voice": "zh-CN-YunyangNeural",
-    "style": "curious",
-    "rate": 1,
-    "pitch": 0,
-    "role": "Boy"
-  },
-  {
-    "content": "要好好学习",
-    "voice": "zh-CN-YunyangNeural",
-    "style": "curious",
-    "rate": 2,
-    "pitch": 0,
-    "role": "Boy"
-  }
+    {
+        "content": "人之初性本善，",
+        "voice": "zh-CN-YunzeNeural",
+        "style": "calm",
+        "rate": 1,
+        "pitch": 0,
+        "role": "YoungAdultMale",
+        "break_time": 500
+        "laughter_url": None  # 没有笑声
+    },
+    {
+        "content": "你说咋办就咋办。",
+        "voice": "zh-CN-XiaoxiaoNeural",
+        "style": "playful",
+        "rate": 1,
+        "pitch": 0,
+        "role": "YoungAdultFemale",
+        "break_time": 1000,
+        "laughter_url": "https://hunk-blog.oss-cn-hongkong.aliyuncs.com/xiaosheng.wav"  # 笑声URL
+    }
 ]
 ```
